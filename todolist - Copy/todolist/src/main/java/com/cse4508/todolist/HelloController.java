@@ -1,4 +1,4 @@
-package com.cse4404.todolist;
+package com.cse4508.todolist;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -30,9 +30,9 @@ public class HelloController {
     @FXML
     private DialogPane error_dialog;
 
-    String PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\task.txt";
-    String PATH1     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\tempFile.txt";
-    String _PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\tempFile2.txt";
+    String PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
+    String PATH1     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile.txt";
+    String _PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile2.txt";
 
     @FXML
     private ListView<String> listview;

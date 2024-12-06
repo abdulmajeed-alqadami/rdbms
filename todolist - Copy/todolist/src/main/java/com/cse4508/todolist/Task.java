@@ -1,4 +1,4 @@
-package com.cse4404.todolist;
+package com.cse4508.todolist;
 
 
 
@@ -23,10 +23,10 @@ public class Task {
     private LocalDate  Date;
     private int  id;
 
-    String PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\task.txt";
-    static String back_up_delete = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\back_up_delete_task.txt";
-    static String back_up_edit = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\back_up_edit_task.txt";
-    String _PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\tempFile.txt";
+    String PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
+    static String back_up_delete = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\back_up_delete_task.txt";
+    static String back_up_edit = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\back_up_edit_task.txt";
+    String _PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile.txt";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/task_db";
 
     private static final String DB_USER = "root";
@@ -48,7 +48,7 @@ public class Task {
                 ResultSet resultSet = statement.executeQuery();
                 if (resultSet.next()) {
                     String lastMessage = resultSet.getString("msg");
-                    Path filePath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\task.txt");
+                    Path filePath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt");
                     Files.write(filePath, lastMessage.getBytes());
                 }
             }
@@ -117,9 +117,9 @@ public class Task {
 
 
     public void sort_tasks() throws IOException,SQLException {
-       Path sourcePath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\tempFile.txt");
+       Path sourcePath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile.txt");
         if(sourcePath.toFile().exists()){
-       Path destinationPath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\task.txt");
+       Path destinationPath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt");
         try (InputStream inputStream = Files.newInputStream(sourcePath);
              OutputStream outputStream = Files.newOutputStream(destinationPath)) {
 

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="276.0" prefWidth="653.0" styleClass="page-color" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4404.todolist.HelloController_delete_task">
+<AnchorPane prefHeight="276.0" prefWidth="653.0" styleClass="page-color" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4508.todolist.HelloController_delete_task">
    <children>
       <Button layoutX="85.0" layoutY="192.0" mnemonicParsing="false" onAction="#onbackclick" prefHeight="45.0" prefWidth="74.0" styleClass="light-button" text="Back">
          <font>

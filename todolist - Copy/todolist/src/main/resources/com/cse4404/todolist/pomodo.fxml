@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="main_vbox" alignment="CENTER" prefHeight="328.0" prefWidth="520.0" styleClass="page-color" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4404.todolist.HelloController_pomodo">
+<VBox fx:id="main_vbox" alignment="CENTER" prefHeight="328.0" prefWidth="520.0" styleClass="page-color" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4508.todolist.HelloController_pomodo">
 <Pane prefHeight="328.0" prefWidth="520.0" styleClass="page-color" stylesheets="@styles.css">
     <children>
 

@@ -1,4 +1,4 @@
-package com.cse4404.todolist;
+package com.cse4508.todolist;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 
 public class ShowDetailedCalendar {
-    String PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\task.txt";
+    String PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
 
 
 

@@ -1,4 +1,4 @@
-package com.cse4404.todolist;
+package com.cse4508.todolist;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

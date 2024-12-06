@@ -1,4 +1,4 @@
-module com.cse4404.todolist {
+module com.cse4508.todolist {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -6,6 +6,6 @@ module com.cse4404.todolist {
     requires java.sql;
     requires java.desktop;
 
-    opens com.cse4404.todolist to javafx.fxml;
-    exports com.cse4404.todolist;
+    opens com.cse4508.todolist to javafx.fxml;
+    exports com.cse4508.todolist;
 }

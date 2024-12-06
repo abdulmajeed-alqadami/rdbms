@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane styleClass="page-color" stylesheets="@styles.css" prefHeight="188.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4404.todolist.HelloController_help_inforation">
+<AnchorPane styleClass="page-color" stylesheets="@styles.css" prefHeight="188.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4508.todolist.HelloController_help_inforation">
    <children>
       <Pane  layoutX="-1.0" layoutY="-4.0" prefHeight="194.0" prefWidth="600.0" stylesheets="@styles.css">
          <children>

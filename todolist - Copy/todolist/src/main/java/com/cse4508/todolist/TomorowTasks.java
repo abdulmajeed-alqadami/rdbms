@@ -1,4 +1,4 @@
-package com.cse4404.todolist;
+package com.cse4508.todolist;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class TomorowTasks {
-    String PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\task.txt";
+    String PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
         @FXML
         private ListView<String> listview;
 
