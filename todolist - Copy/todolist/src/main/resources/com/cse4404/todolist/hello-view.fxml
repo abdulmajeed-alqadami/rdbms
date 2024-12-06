@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="477.0" style="-fx-background-color: #64b5f6;" styleClass="page-color" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cse4404.todolist.HelloController">
+   <children>
+
+      <ListView fx:id="listview" layoutX="7.0" layoutY="139.0" onMouseClicked="#listviewonmouseclicked" prefHeight="336.0" prefWidth="361.0" style="-fx-border-radius: 10%;" styleClass="light-list-view" />
+      <Label fx:id="dat" layoutX="14.0" layoutY="39.0" prefHeight="76.0" prefWidth="444.0" text="today_date" textFill="WHITE" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="Yu Gothic UI Light" size="48.0" />
+         </font>
+      </Label>
+      <MenuBar layoutX="-6.0" layoutY="14.0" prefHeight="25.0" prefWidth="480.0" style="-fx-background-color: #64B5F6FF;">
+        <menus>
+              <Menu mnemonicParsing="false" text="Tasks">
+            <items>
+              <MenuItem fx:id="add_task" mnemonicParsing="false" onAction="#on_addtask_Click" text="Add Task" />
+                <MenuItem fx:id="edit_task" mnemonicParsing="false" onAction="#on_edit_task_Click" text="Edit Task" />
+                <MenuItem fx:id="delete_task" mnemonicParsing="false" onAction="#on_delete_task_Click" text="Delete Task" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Search Task">
+            <items>
+              <MenuItem fx:id="show_calendar" mnemonicParsing="false" onAction="#on_show_calendar_Click" text="Search Tasks" />
+            </items>
+          </Menu>
+           <Menu mnemonicParsing="false" text="Calendar">
+              <items>
+                 <MenuItem fx:id="Show_calenar_details" mnemonicParsing="false" onAction="#on_show_detailed_calendar_Click" text="Show Calendar" />
+              </items>
+           </Menu>
+            <Menu mnemonicParsing="false" text="Pomodo timer">
+                <items>
+                    <MenuItem fx:id="show_pomodo" mnemonicParsing="false" onAction="#on_show_pomodo_Click" text="Show Pomodo" />
+                </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Completed Tasks">
+           <items>
+              <MenuItem fx:id="Completed_Tasks" mnemonicParsing="false" onAction="#on_show_completed_tasks_Click" text="Show My Completed Tasks" />
+           </items>
+           </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="help_information1" mnemonicParsing="false" onAction="#on_help_information_Click" text="About Us" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutX="5.0" layoutY="114.0" prefHeight="25.0" prefWidth="395.0" styleClass="font-inin-main-page" stylesheets="@styles.css">
+         <children>
+            <Label prefHeight="25.0" prefWidth="62.0" styleClass="font-inin-main-page" text="Task Date">
+               <font>
+                  <Font name="Yu Gothic Light" size="10.0" />
+               </font></Label>
+            <Label prefHeight="25.0" prefWidth="51.0" styleClass="font-inin-main-page" text="Task ID" textFill="#64b5f6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="10.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="105.0" styleClass="font-inin-main-page" text="Task Complete" textFill="#64b5f6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="10.0" />
+               </font>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="63.0" styleClass="font-inin-main-page" text="Task Title" textFill="#64b5f6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="10.0" />
+               </font></Label>
+            <Label prefHeight="25.0" prefWidth="137.0" styleClass="font-inin-main-page" text="Task Details" textFill="#64b5f6">
+               <font>
+                  <Font name="Yu Gothic Light" size="10.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <DialogPane fx:id="PANE" layoutX="30.0" layoutY="318.0" prefHeight="63.0" prefWidth="284.0" style="-fx-background-color: #64b5f6;" visible="false">
+         <header>
+            <Label contentDisplay="CENTER" text="SELECT OPTION TO VIEW :">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font></Label>
+         </header>
+         <content>
+            <HBox alignment="CENTER" prefHeight="17.0" prefWidth="284.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#edit_clicked_dialog" prefHeight="33.0" prefWidth="88.0" styleClass="light-button" text="Edit">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#delete_clicked_dialog" prefHeight="30.0" prefWidth="91.0" styleClass="light-button" text="Delete ">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#complete_clicked_dialog" prefHeight="32.0" prefWidth="98.0" styleClass="light-button" text="Complete">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </content>
+      </DialogPane>
+      <DialogPane fx:id="confirm_dialog" layoutX="24.0" layoutY="184.0" prefHeight="63.0" prefWidth="284.0" style="-fx-background-color: #64b5f6;" visible="false">
+         <header>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Confirm Delete  :">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+         </header>
+         <content>
+            <HBox alignment="CENTER" prefHeight="17.0" prefWidth="284.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#Ok" styleClass="light-button" text="Ok" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#Cancel" styleClass="light-button" text="Cancel">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </content>
+      </DialogPane>
+      <DialogPane fx:id="confirm_dialog1" layoutX="24.0" layoutY="318.0" prefHeight="63.0" prefWidth="284.0" style="-fx-background-color: #64b5f6;" visible="false">
+         <header>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="284.0" text="Confirm Delete  :">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+         </header>
+         <content>
+            <HBox alignment="CENTER" prefHeight="17.0" prefWidth="284.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#Ok" styleClass="light-button" text="Ok" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#Cancel" styleClass="light-button" text="Cancel">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </content>
+      </DialogPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="380.0" layoutY="150.0" prefHeight="91.0" prefWidth="84.0" styleClass="font-inin-main-page" text="Label" textAlignment="CENTER" textOverrun="CLIP" fx:id="x_x">
+      </Label>
+      <Label alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="380.0" layoutY="281.0" prefHeight="91.0" prefWidth="84.0" styleClass="font-inin-main-page" text="Label" textAlignment="CENTER" textOverrun="CLIP" fx:id="x_y" />
+      <DialogPane fx:id="error_dialog" layoutX="144.0" layoutY="147.0" prefHeight="91.0" prefWidth="204.0" style="-fx-background-color: #64b5f6;" visible="false">
+         <header>
+
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="284.0" text="Input Error !!" textFill="#ae3d3d">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+         </header>
+         <content>
+            <HBox alignment="CENTER" prefHeight="17.0" prefWidth="284.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Error_detection" onMouseClicked="#Error_detection" styleClass="light-button" text="Ok" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Yu Gothic UI Light" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </content>
+      </DialogPane>
+      <Button layoutX="397.0" layoutY="65.0" mnemonicParsing="false" onAction="#quotes_DIALAG" styleClass="light-button" text="Quotes" />
+      <Button layoutX="273.0" layoutY="65.0" mnemonicParsing="false" onAction="#TOMOROW_TASKS_VIEW" prefHeight="25.0" prefWidth="117.0" styleClass="light-button" text="Tomorrow Tasks" />
+      <Button layoutX="383.0" layoutY="429.0" mnemonicParsing="false" onAction="#backup" onMouseClicked="#backup" prefHeight="25.0" prefWidth="84.0" styleClass="light-button" text="Back Up" />
+   </children>
+</Pane>
