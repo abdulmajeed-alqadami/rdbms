@@ -51,7 +51,7 @@ public class Task {
                 ResultSet resultSet = statement.executeQuery();
                 if (resultSet.next()) {
                     String lastMessage = resultSet.getString("msg");
-                    Path filePath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt");
+                    Path filePath = Paths.get(Paths.get(basePath, "task.txt").toString());
                     Files.write(filePath, lastMessage.getBytes());
                 }
             }
@@ -120,9 +120,9 @@ public class Task {
 
 
     public void sort_tasks() throws IOException,SQLException {
-       Path sourcePath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile.txt");
+       Path sourcePath = Paths.get(Paths.get(basePath, "tempFile.txt").toString());
         if(sourcePath.toFile().exists()){
-       Path destinationPath = Paths.get("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt");
+       Path destinationPath = Paths.get(Paths.get(basePath, "task.txt").toString());
         try (InputStream inputStream = Files.newInputStream(sourcePath);
              OutputStream outputStream = Files.newOutputStream(destinationPath)) {
 
