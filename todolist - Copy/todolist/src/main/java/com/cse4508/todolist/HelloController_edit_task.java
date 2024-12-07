@@ -8,6 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -67,8 +70,10 @@ public class HelloController_edit_task {
 
 
     public void initialize() throws IOException {
-        File tempFile = new File("E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\tempFile2.txt");
-        if (tempFile.exists()) {
+        String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+        String tempFile = Paths.get(basePath, "tempFile2.txt").toString();
+
+        if (Files.exists(Path.of(tempFile)))  {
             BufferedReader reader = new BufferedReader(new FileReader(tempFile));
             String str = reader.readLine();
             task_id.setVisible(true);

@@ -14,21 +14,20 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Quotes {
 
-
-
     @FXML
     private Label as;
-    String PATH_qu     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4404\\todolist\\qu.txt";
-
+    static String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+    static String PATH = Paths.get(basePath, "qu.txt").toString();
     @FXML
     public void Readfromfile_sort_completed() throws IOException {
         List<String> quotes = new ArrayList<>();
 
-        try (Scanner scanner = new Scanner(new File(PATH_qu))) {
+        try (Scanner scanner = new Scanner(new File(PATH))) {
             while (scanner.hasNextLine()) {
                 quotes.add(scanner.nextLine());
             }

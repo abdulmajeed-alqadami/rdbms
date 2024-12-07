@@ -22,11 +22,14 @@ public class Task {
     private String Task_Details;
     private LocalDate  Date;
     private int  id;
-
-    String PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
-    static String back_up_delete = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\back_up_delete_task.txt";
-    static String back_up_edit = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\back_up_edit_task.txt";
-    String _PATH = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile.txt";
+    
+    static String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+    String PATH = Paths.get(basePath, "task.txt").toString();
+    static String back_up_delete = Paths.get(basePath, "back_up_delete_task.txt").toString();
+    static String back_up_edit = Paths.get(basePath, "back_up_edit_task.txt").toString();
+    String _PATH = Paths.get(basePath, "tempFile.txt").toString();
+    
+    
     private static final String DB_URL = "jdbc:mysql://localhost:3306/task_db";
 
     private static final String DB_USER = "root";

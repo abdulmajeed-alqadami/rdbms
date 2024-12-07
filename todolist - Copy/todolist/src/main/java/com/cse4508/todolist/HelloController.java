@@ -30,10 +30,10 @@ public class HelloController {
     @FXML
     private DialogPane error_dialog;
 
-    String PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
-    String PATH1     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile.txt";
-    String _PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\tempFile2.txt";
-
+    static String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+    static String PATH = Paths.get(basePath, "task.txt").toString();
+    static String PATH1 = Paths.get(basePath, "tempFile.txt").toString();
+    static String _PATH = Paths.get(basePath, "tempFile2.txt").toString();
     @FXML
     private ListView<String> listview;
 

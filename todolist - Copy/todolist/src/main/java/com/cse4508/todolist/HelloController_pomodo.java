@@ -15,6 +15,7 @@ import javafx.util.StringConverter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,7 +46,9 @@ public class HelloController_pomodo {
     private int minutes = 30;
     private int seconds = 0;
     private boolean isRunning = false;
-    String PATH     = "E:/todolist/javafx_to_do_list/todolist/src/main/java/com/cse4404/todolist/task.txt";
+    static String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+    static String PATH = Paths.get(basePath, "tempFile2.txt").toString();
+
     @FXML
     private Spinner<String> fxx;
 

@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -39,9 +40,9 @@ public class HelloController_calendar {
             if (date.getValue() != null || (id.getText() != null)) {
                 LocalDate taskDate = date.getValue();
                 String ID = id.getText().trim();
-
-                String filePath = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
-                try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+                String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+                String PATH = Paths.get(basePath, "task.txt").toString();
+                try (BufferedReader reader = new BufferedReader(new FileReader(PATH))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
                         LocalDate _D = LocalDate.parse(line.substring(0, 10));

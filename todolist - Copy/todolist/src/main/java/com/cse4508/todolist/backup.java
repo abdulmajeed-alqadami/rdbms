@@ -11,12 +11,16 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.Objects;
 
 public class backup {
-    static String back_up_delete = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\back_up_delete_task.txt";
-    static String back_up_edit = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\back_up_edit_task.txt";
+
+    static String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+     static String PATH = Paths.get(basePath, "task.txt").toString();
+     static String back_up_delete = Paths.get(basePath, "back_up_delete_task.txt").toString();
+     static String back_up_edit = Paths.get(basePath, "back_up_edit_task.txt").toString();
     boolean edit = false;
     boolean delete = false;
     @FXML

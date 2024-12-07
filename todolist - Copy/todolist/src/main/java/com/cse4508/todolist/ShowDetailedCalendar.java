@@ -3,6 +3,7 @@ package com.cse4508.todolist;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,9 +24,9 @@ import javafx.stage.Stage;
 
 
 public class ShowDetailedCalendar {
-    String PATH     = "E:\\todolist\\javafx_to_do_list\\todolist\\src\\main\\java\\com\\cse4508\\todolist\\task.txt";
 
-
+    static String basePath = Paths.get("src", "main", "java", "com", "cse4508", "todolist").toAbsolutePath().toString();
+    static String PATH = Paths.get(basePath, "task.txt").toString();
 
     @FXML
     public void onbackclick(ActionEvent event) throws IOException {
